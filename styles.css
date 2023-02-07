@@ -3,7 +3,35 @@ body {
   }
   h1 {
     color: white;
+    font-family: "Poppins", Bold;
   }
+  h2 {
+    color: white;
+    font-family: "Poppins", Medium;
+  }
+  h3 {
+    color: white;
+    font-family: "Poppins", Regular;
+  }
+
   p {
-    color: red;
+    color: white;
+    font-family: "Poppins", Regular;
+
   }
+
+  .maintext{
+    margin: auto;
+    text-align: center;
+    width: auto;
+    padding: 10%;
+    font-size: 200%;
+    }
+
+.subtext{
+        margin: auto;
+        text-align: center;
+        width: auto;
+        padding: 10%;
+        font-size: 200%;
+        }

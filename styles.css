@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    font-family: "Poppins", Bold;
+    font-family: "Poppins";
     margin: 0;
     
   }
@@ -24,7 +24,7 @@ body {
   }
 
   nav{
-    background-color: rgb(51, 51, 51);
+    background-color: #000000;
     height: 60px;
     width: 100%;
     padding:1%;
@@ -92,9 +92,18 @@ body {
   }
 
   .sidebar{
-    border: 1px white solid;
     padding: 35px;
     flex: 0.4;
+  }
+
+  .sidebar h2{
+    color: white;
+    font-weight: 500;
+    line-height: 60px;
+    text-decoration: none;
+    font-size: 20px;
+    margin: -10px;
+
   }
 
  
@@ -104,44 +113,93 @@ body {
     color: white;
     line-height: 60px;
     text-decoration: none;
+    font-size: 15px;
+    margin: -10px;
     
     
   }
 
   .herotext{
     padding: 35px;
-    background-color: rgb(26, 26, 26);
-    border: 1px white solid;
+    background-color: #000000;
     flex:2;
   }
-  .mcboxwidget1{
 
-    background-color: rgb(0, 0, 0);
-    border: 1px white solid;
+  .herotext h2{
+    font-weight: 500;
+    line-height: 5px;
+    margin-left: 35px;
+  }
+
+  .herotext p{
+    font-weight: 100;
+    line-height: 5px;
+    margin-left: 35px;
+  
+  }
+  .mcboxwidget1{
+    margin: 8px;
+    border-radius: 15px;
+    background-color: #141414;
     flex:2;
     margin-bottom: 5%;
   }
+
+
+  .mcboxwidget1 p{
+    font-weight: 100;
+    line-height: 35px;
+
+  
+  
+  }
+
 
   .locationsensor{
     display: flex
   }
 
   .mcboxwidget2{
-
-    background-color: rgb(0, 0, 0);
+    margin: 8px;
+    border-radius: 15px;
+    background-color: #141414;
     width: 50%;
-    border: 1px white solid;
     margin-bottom: 5%;
   
   
   }
 
   .mcboxwidget3{
+    margin: 8px;
+    border-radius: 15px;
     width: 50%;
-    background-color: rgb(0, 0, 0);
-    border: 1px white solid;
+    background-color: #141414;
     margin-bottom: 5%;
   
   }
+  .mcboxwidget1 h2{
+    font-weight: light;
+    margin: 20px;
+  }
+
+  .mcboxwidget2 h2{
+    margin: 20px;
+  }
 
 
+  .mcboxwidget3 h2{
+    margin: 20px;
+  }
+
+
+.mcboxwidget1 p{
+  margin:40px;
+}
+
+.mcboxwidget2 p{
+  margin:20px;
+}
+
+.mcboxwidget3 p{
+  margin:20px;
+}

@@ -108,7 +108,7 @@ body {
     
   }
 
-  .mcbox-2{
+  .herotext{
     padding: 35px;
     background-color: rgb(26, 26, 26);
     border: 1px white solid;
@@ -120,6 +120,10 @@ body {
     border: 1px white solid;
     flex:2;
     margin-bottom: 5%;
+  }
+
+  .locationsensor{
+    display: flex
   }
 
   .mcboxwidget2{
@@ -139,3 +143,5 @@ body {
     margin-bottom: 5%;
   
   }
+
+

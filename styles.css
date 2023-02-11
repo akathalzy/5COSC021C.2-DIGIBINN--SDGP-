@@ -60,6 +60,10 @@ body {
     color:white;
     text-decoration: none;
   }
+  
+  :active, a:hover{
+    text-decoration: underline
+  }
 
 
 

@@ -1,0 +1,51 @@
+.body {
+    background-color: black;
+  }
+  .sidepanel {
+    background-color: black;
+    width: 30%;
+    float: left;
+    padding-left: 50px;
+  }
+  .mainpanel {
+    background-color: rgb(253, 251, 251);
+    width: 70%;
+    float: left;
+  }
+  h1 {
+    color: white;
+    font-family: "Poppins", Bold;
+  }
+  h2 {
+    color: white;
+    font-family: "Poppins", Medium;
+  }
+  h3 {
+    color: white;
+    font-family: "Poppins", Regular;
+  }
+  h6 {
+    color: rgb(102, 100, 100);
+    font-family: "Poppins";
+  }
+
+  p {
+    color: white;
+    font-family: "Poppins", Regular;
+
+  }
+
+  .maintext{
+    margin: auto;
+    text-align: center;
+    width: auto;
+    padding: 10%;
+    font-size: 200%;
+    }
+
+.subtext{
+        margin: auto;
+        text-align: center;
+        width: auto;
+        font-size: 150%;
+        }

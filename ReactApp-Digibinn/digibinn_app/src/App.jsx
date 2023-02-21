@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './style'
 import Navbar from './components/Navbar'
-import Hero from './scenes/homePage/Hero'
+import Hero from './components/Hero'
 import Footer from './components/Footer'
 import Button from './components/Button'
 

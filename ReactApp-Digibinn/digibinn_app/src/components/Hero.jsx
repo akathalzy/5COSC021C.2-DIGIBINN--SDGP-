@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from '../../style'
-import Button from '../../components/Button'
+import styles from '../style'
+import Button from './Button'
 
 const Hero = () => (
     <section id="home" className={'flex md:flex-row flex-col ${styles.paddingY}'}>

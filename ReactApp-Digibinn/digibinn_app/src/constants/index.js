@@ -2,16 +2,16 @@ import { people01, people02, people03, facebook, instagram, linkedin, twitter, a
 
 export const navLinks = [
   {
-    id: "home",
-    title: "Home",
+    id: "aboutdigibinn",
+    title: "About Digibinn",
   },
   {
-    id: "features",
-    title: "Features",
+    id: "solutionsforeveryone",
+    title: "Solutions for everyone",
   },
   {
-    id: "product",
-    title: "Product",
+    id: "getaquote",
+    title: "Get a quote",
   },
   {
     id: "clients",

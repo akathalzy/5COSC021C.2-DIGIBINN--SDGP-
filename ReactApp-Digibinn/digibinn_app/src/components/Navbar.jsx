@@ -1,7 +1,8 @@
 import React from 'react'
 import { navLinks } from '../constants'
+import {Link} from 'react-router-dom';
 
-const Navbar = () => {
+function Navbar() {
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
         <h1 className="flex-1 font-poppins font-semibold text-[42px] text-white ml-8">Digibinn.</h1>

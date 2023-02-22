@@ -12,9 +12,9 @@ const Navbar = () => {
                     key={nav.id}
                     className={"font-poppins font-normal cursor-pointer text-[16px] text-white mr-12"}
                     >
-                    <a href={'#${nav.id}'}>
+                    <Link to={nav.link}>
                         {nav.title}
-                    </a>
+                    </Link>
                 </li>
             ))}
         </ul>

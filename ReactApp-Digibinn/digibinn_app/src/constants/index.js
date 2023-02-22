@@ -4,6 +4,7 @@ export const navLinks = [
   {
     id: "aboutdigibinn",
     title: "About Digibinn",
+    link: 'aboutpage'
   },
   {
     id: "solutionsforeveryone",

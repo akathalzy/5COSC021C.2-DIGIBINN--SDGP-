@@ -1,23 +1,27 @@
-import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import {facebook, instagram, linkedin, twitter } from "../assets";
 
 export const navLinks = [
   {
+    id: "login",
+    title: "Login",
+    link: 'Login'
+  },
+  {
+    id: "register",
+    title: "Register",
+    link: 'Register'
+  },
+  {
+    id: "support",
+    title: "Support",
+    link: 'Support'
+  },
+  {
     id: "aboutdigibinn",
-    title: "About Digibinn",
-    link: 'aboutpage'
+    title: "About",
+    link: 'About'
   },
-  {
-    id: "solutionsforeveryone",
-    title: "Solutions for everyone",
-  },
-  {
-    id: "getaquote",
-    title: "Get a quote",
-  },
-  {
-    id: "clients",
-    title: "Clients",
-  },
+  
 ];
 
 export const features = [

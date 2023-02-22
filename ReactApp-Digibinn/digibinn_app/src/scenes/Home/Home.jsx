@@ -6,12 +6,8 @@ import Button from '../../components/Button'
 function Home () {
   return (
     <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 w-full overflow-hidden">
-      <div className={'${styles.paddingX} ${styles.flexCenter}'}>
-        <div className={'${styles.boxWidth}'}>
-          <Navbar />
-        </div>
-      </div>
-
+      <Navbar />
+      
       <div className={'bg-gradient-to-r from-violet-500 to-fuchsia-500 ${styles.flexStart}'}>
         <div className={'${styles.boxWidth}'}>
           <section id="home" className={'flex md:flex-row flex-col ${styles.paddingY}'}>
@@ -26,13 +22,8 @@ function Home () {
           </section>
         </div>
       </div>
-
-      <div className={'bg-primary ${styles.paddingX} ${styles.flexStart}'}>
-        <div className={'${styles.boxWidth}'}>
           
-          <Footer />
-        </div>
-      </div>
+      <Footer />
     </div>
   )
 }

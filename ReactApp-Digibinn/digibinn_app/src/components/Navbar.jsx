@@ -1,6 +1,6 @@
 import React from 'react'
 import { navLinks } from '../constants'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -10,7 +10,7 @@ function Navbar() {
                 <h1 className="flex-1 font-poppins font-semibold text-[42px] text-white ml-8">Digibinn.</h1>
 
                 <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-                    {navLinks.map((nav, index) => (
+                    {navLinks.map((nav) => (
                         <li
                             key={nav.id}
                             className={"font-poppins font-normal cursor-pointer text-[16px] text-white mr-12"}

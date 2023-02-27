@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 const Login = () => {
   return (
-    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden bg-gradient-to-r from-indigo-500 to violet-500 ">
+    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-500 ">
       <Navbar />
             <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl mt-[100px] mb-[300px]">
               <h1 className="text-poppins text-3xl font-semibold text-center text-purple-700">

@@ -1,4 +1,4 @@
-import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import { dashboard, locatebin, bin, schedule, qr, troubleshoot, settings, people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
 
 
 export const navLinks = [
@@ -21,6 +21,52 @@ export const navLinks = [
     id: "aboutdigibinn",
     title: "About",
     link: 'About'
+  },
+  
+];
+
+export const sidebarLinks = [
+  {
+    id: "userdashboard",
+    icon: dashboard,
+    title: "Dashboard",
+    link: 'UserDashboard'
+  },
+  {
+    id: "userlocatebin",
+    icon: locatebin,
+    title: "Locate bin",
+    link: 'userlocatebin'
+  },
+  {
+    id: "userrequest/removebin",
+    icon: bin,
+    title: "Request/Remove bin",
+    link: 'userrequest/removebin'
+  },
+  {
+    id: "userpickupschedule",
+    icon: schedule,
+    title: "Pickup Schedule",
+    link: 'userpickupschedule'
+  },
+  {
+    id: "userscanQR",
+    icon: qr,
+    title: "Scan QR",
+    link: 'userscanQR'
+  },
+  {
+    id: "usertroubleshootsensors",
+    icon: troubleshoot,
+    title: "Troubleshoot sensors",
+    link: 'usertroubleshootsensors'
+  },
+  {
+    id: "usersettings",
+    icon: settings,
+    title: "Settings",
+    link: 'usersettings'
   },
   
 ];

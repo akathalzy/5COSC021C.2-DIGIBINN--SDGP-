@@ -23,11 +23,11 @@ export default function Sidebar() {
                             type="search"
                             name="Search"
                             placeholder="Search..."
-                            className="w-full py-2 pl-10 text-sm rounded-md focus:outline-none"
+                            className="w-full py-2 pl-2 text-sm rounded-md focus:outline-none"
                         />
                     </div>
                     <div className="flex-1">
-                        <ul className="pt-2 pb-4 space-y-1 text-sm ">
+                        <ul className="pt-8 pb-4 space-y-1 text-sm ">
                             {sidebarLinks.map((sidebar) => (
                             <li
                                 key={sidebar.id}

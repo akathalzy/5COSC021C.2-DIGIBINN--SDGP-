@@ -7,8 +7,11 @@ function Navbar() {
     <div className={'${styles.paddingX} ${styles.flexCenter}'}>
         <div className={'${styles.boxWidth}'}>
             <nav className="w-full flex py-6 justify-between items-center navbar">
-                <h1 className="flex-1 font-poppins font-semibold text-[42px] text-white ml-8">Digibinn.</h1>
-
+                <Link to='/'
+                    className="flex-1 font-poppins font-semibold text-[42px] text-white ml-8"
+                >
+                    <h1>Digibinn.</h1>
+                </Link>
                 <ul className="list-none sm:flex hidden justify-end items-center flex-1">
                     {navLinks.map((nav) => (
                         <li

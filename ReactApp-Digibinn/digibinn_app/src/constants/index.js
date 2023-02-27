@@ -72,10 +72,8 @@ export const sidebarLinks = [
 ];
 
 
-export const footerLinks = [
-  {
-    title: "Useful Links",
-    links: [
+export const footerUsefulLinks = [
+
       {
         name: "Content",
         link: "https://www.hoobank.com/content/",
@@ -96,11 +94,12 @@ export const footerLinks = [
         name: "Terms & Services",
         link: "https://www.hoobank.com/terms-and-services/",
       },
-    ],
-  },
-  {
-    title: "Community",
-    links: [
+
+];
+
+  
+
+export const footerResourcesLinks = [
       {
         name: "Help Center",
         link: "https://www.hoobank.com/help-center/",
@@ -121,22 +120,8 @@ export const footerLinks = [
         name: "Newsletters",
         link: "https://www.hoobank.com/newsletters/",
       },
-    ],
-  },
-  {
-    title: "Partner",
-    links: [
-      {
-        name: "Our Partner",
-        link: "https://www.hoobank.com/our-partner/",
-      },
-      {
-        name: "Become a Partner",
-        link: "https://www.hoobank.com/become-a-partner/",
-      },
-    ],
-  },
 ];
+  
 
 export const socialMedia = [
   {

@@ -3,7 +3,7 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import Button from '../../components/Button'
 
-function Home () {
+const Home = () =>{
   return (
     <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 w-full overflow-hidden">
       <Navbar />

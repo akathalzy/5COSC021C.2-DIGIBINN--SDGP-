@@ -9,7 +9,7 @@ export default function Sidebar() {
             <div className="flex flex-col h-screen p-3 bg-gray-800 shadow w-60">
                 <div className="space-y-3">
                     <div className="flex items-center">
-                        <h2 className="text-xl font-bold text-white">Digibinn.</h2>
+                        <h3 className="text-xl font-bold text-white">Digibinn.</h3>
                     </div>
                     <div className="relative">
                         <span className="absolute inset-y-0 left-0 flex items-center py-4">
@@ -31,10 +31,10 @@ export default function Sidebar() {
                             {sidebarLinks.map((sidebar) => (
                             <li
                                 key={sidebar.id}
-                                className={"rounded-sm hover:bg-purple-600  text-white"}
+                                className={"rounded-sm hover:bg-gray-600  text-white"}
                                 >
                                 <Link to={sidebar.link} className="flex items-center p-2 space-x-3 rounded-md">
-                                    <img src = {sidebar.icon} alt="icon" className="w-2 h-2 text-gray-100 mr-5" />
+                                    <img src = {sidebar.icon} alt="icon" className="w-5 h-5 text-gray-100 mr-5" />
                                     {sidebar.title}
                                 </Link>
                             </li>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { socialMedia } from '../constants'
 
 const Footer = () => (
-  <footer className="bg-gray-800 text-gray-400 py-8">
+  <footer className="bg-gray-900 text-gray-400 py-8">
       <div className="container mx-auto flex flex-wrap justify-between">
         <div className="w-full md:w-1/4 text-center md:text-left">
           <h1 className="text-3xl font-bold mb-2 text-white">Digibinn</h1>

@@ -18,9 +18,9 @@ function Navbar() {
                             key={nav.id}
                             className={"font-poppins font-normal cursor-pointer text-[16px] text-white mr-12"}
                             >
-                            <Link to={nav.link}>
+                            <a href={nav.link}>
                                 {nav.title}
-                            </Link>
+                            </a>
                         </li>
                     ))}
                 </ul>

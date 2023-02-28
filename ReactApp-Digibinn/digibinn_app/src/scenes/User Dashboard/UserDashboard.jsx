@@ -31,7 +31,7 @@ export default function Sidebar() {
                             {sidebarLinks.map((sidebar) => (
                             <li
                                 key={sidebar.id}
-                                className={"rounded-sm hover:bg-gray-600  text-white"}
+                                className={"rounded-sm hover:bg-blue-600 text-white"}
                                 >
                                 <Link to={sidebar.link} className="flex items-center p-2 space-x-3 rounded-md">
                                     <img src = {sidebar.icon} alt="icon" className="w-5 h-5 text-gray-100 mr-5" />

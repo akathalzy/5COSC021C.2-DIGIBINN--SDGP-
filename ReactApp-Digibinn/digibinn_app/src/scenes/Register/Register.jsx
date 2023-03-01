@@ -2,29 +2,63 @@ import React, {useState} from 'react'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import {Link} from 'react-router-dom';
+import registerUser from '../../api';
 
 
 function Register() {
-    const [number, setNumber] = useState('');
-    const [userType, setUserType] = useState('');
-    const [termsChecked, setTermsChecked] = useState(false);
+    const [name, setName] = useState("");
+    const [number, setNumber] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [userType, setUserType] = useState("");
+    const [termsAgreed, setTermsAgreed] = useState(false);
   
-    const handleNumberChange = (event) => {
-      setNumber(event.target.value);
-    };
-  
-    const handleUserTypeChange = (event) => {
-      setUserType(event.target.value);
-    };
-  
-    const handleTermsChange = (event) => {
-      setTermsChecked(event.target.checked);
-    };
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      // Handle form submission here
-    };
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+      };
+    
+      const handleNumberChange = (e) => {
+        setNumber(e.target.value);
+      };
+    
+      const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+      };
+    
+      const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+      };
+    
+      const handleConfirmPasswordChange = (e) => {
+        setConfirmPassword(e.target.value);
+      };
+    
+      const handleUserTypeChange = (e) => {
+        setUserType(e.target.value);
+      };
+    
+      const handleTermsAgreedChange = (e) => {
+        setTermsAgreed(e.target.checked);
+      };
+    
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        const user = {
+            name,
+            number,
+            email,
+            password,
+            userType,
+          };
+          try {
+            const response = await registerUser(user);
+            console.log(response.data);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+      };
 
 
   return (
@@ -49,6 +83,8 @@ function Register() {
                                     <input
                                         type="text"
                                         name="name"
+                                        value={name}
+                                        onChange={handleNameChange}
                                         className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                     />
                                 </div>
@@ -64,6 +100,8 @@ function Register() {
                                     <input
                                         type="email"
                                         name="email"
+                                        value={email}
+                                        onChange={handleEmailChange}
                                         className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                     />
                                 </div>
@@ -79,6 +117,8 @@ function Register() {
                                     <input
                                         type="password"
                                         name="password"
+                                        value={password}
+                                        onChange={handlePasswordChange}
                                         className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                     />
                                 </div>
@@ -94,6 +134,8 @@ function Register() {
                                     <input
                                         type="password"
                                         name="password_confirmation"
+                                        value={confirmPassword}
+                                        onChange={handleConfirmPasswordChange}
                                         className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                     />
                                 </div>
@@ -133,12 +175,13 @@ function Register() {
                                 className="mr-2 leading-tight"
                                 type="checkbox"
                                 id="termsAndConditions"
-                                checked={termsChecked}
-                                onChange={handleTermsChange}
+                                checked={termsAgreed}
+                                onChange={handleTermsAgreedChange}
                                 />
                                 <label className="text-sm text-gray-700" htmlFor="termsAndConditions">
                                 I agree to the{' '}
-                                <a href="#" className="text-blue-500">
+                                <a href="#" 
+                                    className="text-blue-500">
                                     Terms and Conditions
                                 </a>
                                 </label>
@@ -148,7 +191,7 @@ function Register() {
                         <div className="flex items-center mt-4">
                             <button 
                                 type="submit"
-                                disabled={!termsChecked || !number || !userType}
+                                disabled={!name || !email || !password || !confirmPassword || !termsChecked || !number || !userType}
                                 className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
                                 Register
                             </button>

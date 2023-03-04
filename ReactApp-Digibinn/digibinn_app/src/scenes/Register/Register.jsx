@@ -42,7 +42,7 @@ function Register() {
         setTermsAgreed(e.target.checked);
       };
     
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
         const user = {
             name,
@@ -57,7 +57,7 @@ function Register() {
           } catch (error) {
             console.error(error);
           }
-        };
+        
       };
 
 

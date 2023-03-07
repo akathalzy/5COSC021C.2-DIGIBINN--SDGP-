@@ -28,7 +28,7 @@ app.post('/register', (req, res) => {
         res.status(400).json({ error: 'User already exists' });
         client.close();
       } else {
-        // Insert new user into collection
+        // Insert new user into collections
         collection.insertOne({ name, email, password, number, userType }, (err, result) => {
           if (err) throw err;
 

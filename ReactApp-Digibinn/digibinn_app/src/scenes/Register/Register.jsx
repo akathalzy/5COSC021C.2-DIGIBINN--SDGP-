@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import {Link} from 'react-router-dom';
+import {db} from '../../firebase'
 
 
 function Register() {
@@ -41,19 +42,44 @@ function Register() {
         setTermsAgreed(e.target.checked);
       };
     
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
-        fetch('/api/register', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ name, email, password, number, userType })
-          })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error(error));
-        };
+    
+        if (password !== confirmPassword) {
+          setError('Passwords do not match');
+          return;
+        }
+    
+        if (!termsAgreed) {
+          setError('You must accept the terms and conditions');
+          return;
+        }
+    
+        // Register user with Firebase Authentication
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // Send user registration data to Firebase Realtime Database
+            const userData = {
+            name: name,
+            email: email,
+            password: password,
+            number: number,
+            userType: userType,
+            };
+            firebase.database().ref('users/' + userCredential.user.uid).set(userData)
+            .then(() => {
+                console.log("Registration successful");
+            })
+            .catch((error) => {
+                console.error("Error writing user data to Firebase Realtime Database: ", error);
+            });
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.error(`Registration error (${errorCode}): ${errorMessage}`);
+        });
+      };
 
 
   return (
@@ -80,6 +106,7 @@ function Register() {
                                         name="name"
                                         value={name}
                                         onChange={handleNameChange}
+                                        required
                                         className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                     />
                                 </div>
@@ -97,6 +124,7 @@ function Register() {
                                         name="email"
                                         value={email}
                                         onChange={handleEmailChange}
+                                        required
                                         className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                     />
                                 </div>
@@ -114,6 +142,7 @@ function Register() {
                                         name="password"
                                         value={password}
                                         onChange={handlePasswordChange}
+                                        required
                                         className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                     />
                                 </div>
@@ -131,6 +160,7 @@ function Register() {
                                         name="password_confirmation"
                                         value={confirmPassword}
                                         onChange={handleConfirmPasswordChange}
+                                        required
                                         className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                     />
                                 </div>
@@ -146,6 +176,7 @@ function Register() {
                                 type="tel"
                                 value={number}
                                 onChange={handleNumberChange}
+                                required
                                 className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                 />
                             </div>
@@ -159,6 +190,7 @@ function Register() {
                                 id="userType"
                                 value={userType}
                                 onChange={handleUserTypeChange}
+                                required
                                 className="shadow appearance-none border rounded w-full px-4 py-2 mt-2 text-gray-700 text-[14px] leading-tight focus:outline-none focus:shadow-outline"
                                 >
                                 <option value="smartDustbinUser">Smart Dustbin User</option>
@@ -172,6 +204,7 @@ function Register() {
                                 id="termsAndConditions"
                                 checked={termsAgreed}
                                 onChange={handleTermsAgreedChange}
+                                required
                                 />
                                 <label className="text-sm text-gray-700" htmlFor="termsAndConditions">
                                 I agree to the{' '}

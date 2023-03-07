@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import {Link} from 'react-router-dom';
-import {db} from '../../firebase'
 
 
 function Register() {
@@ -56,7 +55,7 @@ function Register() {
         }
     
         // Register user with Firebase Authentication
-        firebase.auth().createUserWithEmailAndPassword(email, password)
+        await auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             // Send user registration data to Firebase Realtime Database
             const userData = {
@@ -219,7 +218,7 @@ function Register() {
                         <div className="flex items-center mt-4">
                             <button 
                                 type="submit"
-                                
+                                onClick={handleSubmit}
                                 className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
                                 Register
                             </button>

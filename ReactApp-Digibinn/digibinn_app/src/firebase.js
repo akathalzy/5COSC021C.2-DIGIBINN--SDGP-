@@ -1,10 +1,10 @@
 // Import the functions you need from the SDKs you need
 import {initializeApp } from 'firebase/app';
-import "firebase/auth";
-import "firebase/database";
+import { getAuth } from "firebase/auth";
+import { getDatabase } from "firebase/database";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -14,12 +14,16 @@ const firebaseConfig = {
   storageBucket: "digibinn-20537.appspot.com",
   messagingSenderId: "764805872612",
   appId: "1:764805872612:web:6a4e09da407cc3db6b25f1",
-  measurementId: "G-EHNBQ4KS9Z"
+  measurementId: "G-EHNBQ4KS9Z",
+  databaseURL: "https://digibinn-20537-default-rtdb.asia-southeast1.firebasedatabase.app/"
 };
 
 // Initialize Firebase
-const firebase = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+// Initialize Realtime Database and get a reference to the service
+const database = getDatabase(app);
 
 
-export default firebase
+export const auth = getAuth(app);
+export default {app, database}
 

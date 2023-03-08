@@ -1,14 +1,10 @@
 import React, {useState} from 'react'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
-import {Link} from 'react-router-dom';
-// Import Firebase SDK
-import firebase from '../../firebase'
-// Import Firebase Authentication module
-import "firebase/auth";
-// Import Firebase Realtime Database module
-import "firebase/database";
-
+import {Link, NavLink, useNavigate} from 'react-router-dom';
+import {  createUserWithEmailAndPassword  } from 'firebase/auth';
+import { auth } from '../../firebase';
+import { getDatabase, push, ref } from 'firebase/database';
 
 
 const Register = (e) => {
@@ -51,40 +47,28 @@ const Register = (e) => {
       const handleSubmit = async (e) => {
         e.preventDefault();
     
-        if (password !== confirmPassword) {
-          setError('Passwords do not match');
-          return;
-        }
-    
-        if (!termsAgreed) {
-          setError('You must accept the terms and conditions');
-          return;
-        }
-    
         // Register user with Firebase Authentication
-        const registerUser = (name, email, password, number, userType) => {
-            firebase.auth().createUserWithEmailAndPassword(email, password)
-              .then((userCredential) => {
-                const userData = {
-                  name,
-                  email,
-                  password,
-                  number,
-                  userType,
-                };
-                return firebase.database().ref('users/' + userCredential.user.uid).set(userData);
-              })
-              .then(() => {
-                console.log("Registration successful");
-                // Redirect to login page
-                window.location.replace("/login.html");
-              })
-              .catch((error) => {
-                console.error("Registration error: ", error);
-                alert("Registration unsuccessful");
+        const registerUser = {
+            name: name, 
+            email: email, 
+            password: password, 
+            number: number, 
+            userType: userType}
+            const db = getDatabase();
+            await push(ref(db, 'users/'), registerUser),
+            await createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+            // Signed in
+                const user = userCredential.user;
+                console.log(user);
+                navigate("/login")
+                })
+                .catch((error) => {
+                    console.error("Registration error: ", error);
+                    alert("Registration unsuccessful");
               });
         };
-    }   
+      
 
 
   return (
@@ -129,7 +113,6 @@ const Register = (e) => {
                                         name="email"
                                         value={email}
                                         onChange={handleEmailChange}
-                                        required
                                         className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                     />
                                 </div>
@@ -147,7 +130,6 @@ const Register = (e) => {
                                         name="password"
                                         value={password}
                                         onChange={handlePasswordChange}
-                                        required
                                         className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                     />
                                 </div>
@@ -165,7 +147,6 @@ const Register = (e) => {
                                         name="password_confirmation"
                                         value={confirmPassword}
                                         onChange={handleConfirmPasswordChange}
-                                        required
                                         className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                     />
                                 </div>
@@ -181,7 +162,6 @@ const Register = (e) => {
                                 type="tel"
                                 value={number}
                                 onChange={handleNumberChange}
-                                required
                                 className="block w-full px-4 py-2 mt-2 text-black bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                                 />
                             </div>
@@ -195,7 +175,6 @@ const Register = (e) => {
                                 id="userType"
                                 value={userType}
                                 onChange={handleUserTypeChange}
-                                required
                                 className="shadow appearance-none border rounded w-full px-4 py-2 mt-2 text-gray-700 text-[14px] leading-tight focus:outline-none focus:shadow-outline"
                                 >
                                 <option value="smartDustbinUser">Smart Dustbin User</option>
@@ -209,7 +188,6 @@ const Register = (e) => {
                                 id="termsAndConditions"
                                 checked={termsAgreed}
                                 onChange={handleTermsAgreedChange}
-                                required
                                 />
                                 <label className="text-sm text-gray-700" htmlFor="termsAndConditions">
                                 I agree to the{' '}

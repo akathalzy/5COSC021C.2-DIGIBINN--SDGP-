@@ -2,7 +2,11 @@ import React, {useState} from 'react'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import {Link, useNavigate} from 'react-router-dom';
-import {auth} from '../../firebase';
+import firebase from '../../firebase'
+// Import Firebase Authentication module
+import "firebase/auth";
+// Import Firebase Realtime Database module
+import "firebase/database";
 
 
 const Login = () => {
@@ -11,11 +15,14 @@ const Login = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleLogin = async () => {
+  const handleLogin = (e) => {
     try {
-      await auth().signInWithEmailAndPassword(auth, email, password);
-      navigate.push('/userdashboard');
-    } catch (error) {
+      firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        console.log(userCredential);
+        navigate.push('/userdashboard');
+    }) }
+    catch (error) {
       switch (error.code) {
         case 'auth/user-not-found':
           setErrorMessage('User not found.');

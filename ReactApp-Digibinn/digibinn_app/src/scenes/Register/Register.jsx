@@ -2,9 +2,16 @@ import React, {useState} from 'react'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import {Link} from 'react-router-dom';
+// Import Firebase SDK
+import firebase from '../../firebase'
+// Import Firebase Authentication module
+import "firebase/auth";
+// Import Firebase Realtime Database module
+import "firebase/database";
 
 
-function Register() {
+
+const Register = (e) => {
     const [name, setName] = useState("");
     const [number, setNumber] = useState("");
     const [email, setEmail] = useState("");
@@ -55,30 +62,29 @@ function Register() {
         }
     
         // Register user with Firebase Authentication
-        await auth().createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Send user registration data to Firebase Realtime Database
-            const userData = {
-            name: name,
-            email: email,
-            password: password,
-            number: number,
-            userType: userType,
-            };
-            firebase.database().ref('users/' + userCredential.user.uid).set(userData)
-            .then(() => {
+        const registerUser = (name, email, password, number, userType) => {
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+              .then((userCredential) => {
+                const userData = {
+                  name,
+                  email,
+                  password,
+                  number,
+                  userType,
+                };
+                return firebase.database().ref('users/' + userCredential.user.uid).set(userData);
+              })
+              .then(() => {
                 console.log("Registration successful");
-            })
-            .catch((error) => {
-                console.error("Error writing user data to Firebase Realtime Database: ", error);
-            });
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.error(`Registration error (${errorCode}): ${errorMessage}`);
-        });
-      };
+                // Redirect to login page
+                window.location.replace("/login.html");
+              })
+              .catch((error) => {
+                console.error("Registration error: ", error);
+                alert("Registration unsuccessful");
+              });
+        };
+    }   
 
 
   return (
@@ -238,7 +244,7 @@ function Register() {
             </div>
         <Footer />
     </div>
-    );
+    )
 }
 
 export default Register

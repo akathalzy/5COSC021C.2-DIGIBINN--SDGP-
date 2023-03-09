@@ -30,7 +30,7 @@ const Login = () => {
           alert('Wrong password.');
           break;
         default:
-          alert(error.message);
+          alert('Error login in');
       }
     })
   }

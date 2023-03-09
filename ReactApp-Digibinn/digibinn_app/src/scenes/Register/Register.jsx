@@ -15,6 +15,7 @@ const Register = (e) => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [userType, setUserType] = useState("smartDustbinUser");
     const [termsAgreed, setTermsAgreed] = useState(false);
+    const navigate = useNavigate();
   
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -53,7 +54,9 @@ const Register = (e) => {
             email: email, 
             password: password, 
             number: number, 
-            userType: userType}
+            userType: userType
+        }
+
             const db = getDatabase();
             await push(ref(db, 'users/'), registerUser),
             await createUserWithEmailAndPassword(auth, email, password)
@@ -61,6 +64,7 @@ const Register = (e) => {
             // Signed in
                 const user = userCredential.user;
                 console.log(user);
+                alert("Registration successful");
                 navigate("/login")
                 })
                 .catch((error) => {

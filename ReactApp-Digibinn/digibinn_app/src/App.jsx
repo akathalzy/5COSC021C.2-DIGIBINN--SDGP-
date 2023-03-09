@@ -5,6 +5,7 @@ import Home from './scenes/Home/Home'
 import Login from './scenes/Login/Login';
 import Register from './scenes/Register/Register';
 import UserDashboard from './scenes/User Dashboard/UserDashboard';
+import CollectorDashboard from './scenes/Collector Dashboard/CollectorDashboard';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
         <Route path="/userdashboard" element={<UserDashboard />} />
+        <Route path="/collectordashboard" element={<CollectorDashboard />} />
       </Routes>
     </div>
     </Router>

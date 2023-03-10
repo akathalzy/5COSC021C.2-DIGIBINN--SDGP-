@@ -30,43 +30,43 @@ export const sidebarLinks = [
     id: "userdashboard",
     icon: dashboard,
     title: "Dashboard",
-    link: 'UserDashboard'
+    link: '../userdashboard'
   },
   {
     id: "userlocatebin",
     icon: locatebin,
     title: "Locate bin",
-    link: 'userlocatebin'
+    link: '../userlocatebin'
   },
   {
-    id: "userrequest/removebin",
+    id: "userrequestremovebin",
     icon: bin,
     title: "Request/Remove bin",
-    link: 'userrequest/removebin'
+    link: '../userrequestremovebin'
   },
   {
     id: "userpickupschedule",
     icon: schedule,
     title: "Pickup Schedule",
-    link: 'userpickupschedule'
+    link: '../userpickupschedule'
   },
   {
     id: "userscanQR",
     icon: qr,
     title: "Scan QR",
-    link: 'userscanQR'
+    link: '../userscanQR'
   },
   {
     id: "usertroubleshootsensors",
     icon: troubleshoot,
     title: "Troubleshoot sensors",
-    link: 'usertroubleshootsensors'
+    link: '../usertroubleshoot'
   },
   {
     id: "usersettings",
     icon: settings,
     title: "Settings",
-    link: 'usersettings'
+    link: '../usersettings'
   },
   
 ];
@@ -95,10 +95,4 @@ export const socialMedia = [
   },
 ];
 
-export const REGEX = {
-  EMAIL: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i,
-  MOBILE: /^[0-9]{10}$/i,
-};
-
-export const ENABLE_FIREBASE = false
 

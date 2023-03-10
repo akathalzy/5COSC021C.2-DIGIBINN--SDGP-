@@ -1,23 +1,41 @@
 import React, { useState } from 'react'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/NavbarBlack'
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {  signInWithEmailAndPassword   } from 'firebase/auth';
 import { auth } from '../../firebase';
+import { getDatabase,onValue, ref } from 'firebase/database';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleLogin = async (e) => {
+    const db = getDatabase();
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+    await signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in
       alert("Login successful");
       const user = userCredential.user;
-      navigate("/UserDashboard")
+      const userId = user.uid;
+      const userRef = ref(db, `users/` + userId)
+      onValue(userRef, (snapshot) => {
+        const userData = snapshot.val();
+        if (userData.userType === "smartDustbinUser") {
+          navigate("/UserDashboard");
+        } else if (userData.userType === "trashCollector") {
+          navigate("/CollectorDashboard");
+        }
+      });
       console.log(user);
     })
     .catch ((error) => {
@@ -37,7 +55,7 @@ const Login = () => {
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden bg-[url('https://images.unsplash.com/photo-1468581264429-2548ef9eb732?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80')] bg-cover ">
       <Navbar />
-            <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl mt-[100px] mb-[300px]">
+            <div className="w-full p-6 m-auto bg-white rounded-3xl drop-shadow-3xl lg:max-w-2xl mt-[100px] mb-[300px]">
               <h1 className="font-poppins font-semibold text-[42px] text-black text-center">
                 Sign in
               </h1>
@@ -51,6 +69,7 @@ const Login = () => {
                     </label>
                     <input
                       type="email"
+                      onChange={handleEmailChange}
                       className="block w-full px-4 py-2 mt-2 text-grey-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                     />
                   </div>
@@ -63,6 +82,7 @@ const Login = () => {
                     </label>
                       <input
                         type="password"
+                        onChange={handlePasswordChange}
                         className="block w-full px-4 py-2 mt-2 text-grey-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                   </div>

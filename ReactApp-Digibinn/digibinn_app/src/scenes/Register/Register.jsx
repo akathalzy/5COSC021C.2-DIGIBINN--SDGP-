@@ -45,24 +45,21 @@ const Register = (e) => {
         setTermsAgreed(e.target.checked);
       };
     
-      const handleSubmit = async (e) => {
+      const handleSubmit =  (e) => {
         e.preventDefault();
-    
-        // Register user with Firebase Authentication
-        const registerUser = {
-            name: name, 
-            email: email, 
-            password: password, 
-            number: number, 
-            userType: userType
-        }
 
             const db = getDatabase();
-            await push(ref(db, 'users/'), registerUser),
-            await createUserWithEmailAndPassword(auth, email, password)
+            createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
+                    const user = userCredential.user;
+                    const userId = user.uid;
+                    const registerUser = {
+                        name: name,  
+                        number: number, 
+                        userType: userType
+                    }
             // Signed in
-                const user = userCredential.user;
+                push(ref(db, 'users/' + userId), registerUser),
                 console.log(user);
                 alert("Registration successful");
                 navigate("/login")
@@ -80,11 +77,11 @@ const Register = (e) => {
           <Navbar />
             <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
             
-                <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-3xl rounded-lg mt-[100px] mb-[300px]">
-                  <h1 className="text-poppins text-3xl font-bold text-center text-purple-700">
+                <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-3xl rounded-3xl shadow-3xl mt-[100px] mb-[300px]">
+                  <h1 className="font-poppins font-semibold text-[42px] text-black text-center">
                       Create an account
                   </h1>
-                    <form onSubmit={handleSubmit} className="mt-6">
+                    <form onSubmit={handleSubmit} className="mt-6 font-poppins">
                         <div className='grid grid-cols-2 gap-4'>
                             <div className="mt-4">
                                 <label

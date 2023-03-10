@@ -1,10 +1,10 @@
 import React from "react";
 import Sidebar from "../../components/Sidebar";
 
-function UserDashboard() {
+function UserRemoveRequestBin() {
     return (
-        <div className="flex bg-gray-800">
-            <Sidebar / >
+        <div className="flex bg-gray-800 min-h-screen pt-6 sm:justify-center sm:pt-0">
+            <Sidebar />
             <div className="container mx-auto mt-12">
                 <div className="flex-col mb-6">
                     <div className="w-full px-4 py-5 bg-black rounded-lg shadow mb-10">
@@ -36,6 +36,6 @@ function UserDashboard() {
                 </div>
             </div>
         </div>
-    )
-};
-export default UserDashboard;
+    );
+}
+export default UserRemoveRequestBin;

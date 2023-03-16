@@ -9,7 +9,7 @@ function UserTroubleshoot() {
                 <div className="flex-col mb-6">
                     <div className="grid grid-cols-2 gap-4 mb-6">
                         <div className="w-full px-4 py-5 bg-black rounded-lg shadow mb-10">
-                            <div className="text-sm font-medium text-gray-500 truncate mb-5">
+                            <div className="text-[18px] font-medium text-white truncate mb-5">
                                 Ultra sonic sensor
                             </div>
                             <div className="mt-1 text-3xl font-semibold text-white">
@@ -17,7 +17,7 @@ function UserTroubleshoot() {
                             </div>
                         </div>
                         <div className="w-full px-4 py-5 bg-black rounded-lg shadow mb-10">
-                            <div className="text-sm font-medium text-gray-500 truncate mb-5">
+                            <div className="text-[18px] font-medium text-white truncate mb-5">
                                 Weight sensor
                             </div>
                             <div className="mt-1 text-3xl font-semibold text-white">

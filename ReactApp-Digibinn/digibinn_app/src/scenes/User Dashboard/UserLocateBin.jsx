@@ -14,7 +14,7 @@ function UserLocateBin() {
             <div className="container mx-auto mt-12">
                 <div className="flex-col mb-6">
                     <div className="w-full px-4 py-5 bg-black rounded-lg shadow mb-10">
-                        <div className="text-[16px] font-medium text-gray-500 truncate mb-5">
+                        <div className="text-[18px] font-medium text-white truncate mb-5">
                             Bin locations 
                         </div>
                         <div className="mt-1 text-3xl font-semibold text-white items-center">

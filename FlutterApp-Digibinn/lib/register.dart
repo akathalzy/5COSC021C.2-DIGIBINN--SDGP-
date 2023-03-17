@@ -1,3 +1,4 @@
+import 'package:digibinn_app/login.dart';
 import 'package:flutter/material.dart';
 
 class MyRegister extends StatefulWidget {
@@ -11,14 +12,11 @@ class _MyRegisterState extends State<MyRegister> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('assets/register.png'), fit: BoxFit.cover),
-      ),
+
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.amber,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.amber,
           elevation: 0,
         ),
         body: Stack(
@@ -47,17 +45,20 @@ class _MyRegisterState extends State<MyRegister> {
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                   borderSide: BorderSide(
-                                    color: Colors.white,
+                                    color: Color.fromARGB(255, 0, 0, 0),
+                                    
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                   borderSide: BorderSide(
-                                    color: Colors.black,
+                                    color: Color.fromARGB(255, 0, 0, 0),
                                   ),
                                 ),
                                 hintText: "Name",
-                                hintStyle: TextStyle(color: Colors.white),
+                                fillColor: Colors.grey.shade100,
+                                filled: true,
+                                hintStyle: TextStyle(color: Colors.black54),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
@@ -68,10 +69,11 @@ class _MyRegisterState extends State<MyRegister> {
                           TextField(
                             style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
+                              
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                   borderSide: BorderSide(
-                                    color: Colors.white,
+                                    color: Color.fromARGB(255, 0, 0, 0),
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(
@@ -81,7 +83,9 @@ class _MyRegisterState extends State<MyRegister> {
                                   ),
                                 ),
                                 hintText: "Email",
-                                hintStyle: TextStyle(color: Colors.white),
+                                fillColor: Colors.grey.shade100,
+                                filled: true,
+                                hintStyle: TextStyle(color: Colors.black54),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
@@ -96,17 +100,19 @@ class _MyRegisterState extends State<MyRegister> {
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                   borderSide: BorderSide(
-                                    color: Colors.white,
+                                    color: Color.fromARGB(255, 0, 0, 0),
                                   ),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                   borderSide: BorderSide(
-                                    color: Colors.black,
+                                    color: Color.fromARGB(255, 0, 0, 0),
                                   ),
                                 ),
                                 hintText: "Password",
-                                hintStyle: TextStyle(color: Colors.white),
+                                fillColor: Colors.grey.shade100,
+                                filled: true,
+                                hintStyle: TextStyle(color: Colors.black54),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
@@ -120,7 +126,7 @@ class _MyRegisterState extends State<MyRegister> {
                               Text(
                                 'Sign Up',
                                 style: TextStyle(
-                                    color: Colors.white,
+                                    color: Color.fromARGB(255, 0, 0, 0),
                                     fontSize: 27,
                                     fontWeight: FontWeight.w700),
                               ),
@@ -145,14 +151,16 @@ class _MyRegisterState extends State<MyRegister> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'login');
+                                  Navigator.pushReplacement(
+                                     context,
+                                      MaterialPageRoute(builder: (context) => MyLogin()),);
                                 },
                                 child: Text(
                                   'Sign In',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,
-                                      color: Colors.white,
+                                      color: Color(0xff4c505b),
                                       fontSize: 18),
                                 ),
                                 style: ButtonStyle(),

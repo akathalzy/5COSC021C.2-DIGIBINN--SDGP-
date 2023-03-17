@@ -1,9 +1,11 @@
+import 'package:digibinn_app/pages/homePage.dart';
+import 'package:digibinn_app/register.dart';
 import 'package:flutter/material.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
 
-  @override
+  // @overridesbfasbjf
   _MyLoginState createState() => _MyLoginState();
 }
 
@@ -13,7 +15,6 @@ class _MyLoginState extends State<MyLogin> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.amber,
-       
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -21,11 +22,14 @@ class _MyLoginState extends State<MyLogin> {
           children: [
             Container(),
             Container(
-              padding: EdgeInsets.only(left: 35, top: 130),
-              child: Text(
+              padding: const EdgeInsets.only(left: 35, top: 130),
+              child: const Text(
                 'Welcome to DigiBinn',
-                style: TextStyle(color: Color.fromARGB(255, 245, 0, 0), fontSize: 38, fontFamily: "Poppins-Bold.ttf", letterSpacing: 5),
-                
+                style: TextStyle(
+                    color: Color.fromARGB(255, 245, 0, 0),
+                    fontSize: 38,
+                    fontFamily: "Poppins-Bold.ttf",
+                    letterSpacing: 5),
               ),
             ),
             SingleChildScrollView(
@@ -79,7 +83,13 @@ class _MyLoginState extends State<MyLogin> {
                                 backgroundColor: Color(0xff4c505b),
                                 child: IconButton(
                                     color: Colors.white,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => MainPage()),
+                                      );
+                                    },
                                     icon: Icon(
                                       Icons.arrow_forward,
                                     )),
@@ -94,7 +104,11 @@ class _MyLoginState extends State<MyLogin> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'register');
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => MyRegister()),
+                                  );
                                 },
                                 child: Text(
                                   'Sign Up',

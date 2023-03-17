@@ -1,0 +1,12 @@
+com.example.digibinn_app-jetified-window-java-1.0.0-beta04-0 C:\Users\Kemila\.gradle\caches\transforms-3\006d93cd422dbc43e89591147c2de572\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.digibinn_app-core-1.6.0-1 C:\Users\Kemila\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\res
+com.example.digibinn_app-jetified-annotation-experimental-1.1.0-2 C:\Users\Kemila\.gradle\caches\transforms-3\8965c941cf4bee4d72541b965c7c9d39\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.digibinn_app-jetified-window-1.0.0-beta04-3 C:\Users\Kemila\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\res
+com.example.digibinn_app-debug-4 D:\IIT\2 nd year\software development group project\DigiBinn\digiBinn\android\app\src\debug\res
+com.example.digibinn_app-main-5 D:\IIT\2 nd year\software development group project\DigiBinn\digiBinn\android\app\src\main\res
+com.example.digibinn_app-pngs-6 D:\IIT\2 nd year\software development group project\DigiBinn\digiBinn\build\app\generated\res\pngs\debug
+com.example.digibinn_app-resValues-7 D:\IIT\2 nd year\software development group project\DigiBinn\digiBinn\build\app\generated\res\resValues\debug
+com.example.digibinn_app-rs-8 D:\IIT\2 nd year\software development group project\DigiBinn\digiBinn\build\app\generated\res\rs\debug
+com.example.digibinn_app-mergeDebugResources-9 D:\IIT\2 nd year\software development group project\DigiBinn\digiBinn\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.digibinn_app-mergeDebugResources-10 D:\IIT\2 nd year\software development group project\DigiBinn\digiBinn\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.digibinn_app-merged_res-11 D:\IIT\2 nd year\software development group project\DigiBinn\digiBinn\build\app\intermediates\merged_res\debug

@@ -1,7 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import Button from '../../components/Button'
 
 const Home = () =>{
   return (
@@ -17,7 +17,11 @@ const Home = () =>{
                 trash collection.</h1>
               </div>
               <p className={'${styles.paragraph} mt-5 justify-between text-center w-full text-white'}>We provide the best garbage collection service for <br /> your company or residence!</p>
-              <Button styles='mt-10' />
+              <Link to="/register">
+                <button type='button' className={'transition ease-in-out delay-150 py-2 px-8 bg-blue-500 hover:bg-blue-700 font-poppins font-medium text-[12px] text-white outline-none rounded-full ${styles} mt-8 mb-8'}>
+                  Get Started
+                </button>
+              </Link>
             </div>
           </section>
         </div>

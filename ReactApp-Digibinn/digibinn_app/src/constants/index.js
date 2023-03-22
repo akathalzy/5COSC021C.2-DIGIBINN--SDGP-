@@ -30,43 +30,43 @@ export const sidebarLinks = [
     id: "userdashboard",
     icon: dashboard,
     title: "Dashboard",
-    link: 'UserDashboard'
+    link: '../userdashboard'
   },
   {
     id: "userlocatebin",
     icon: locatebin,
     title: "Locate bin",
-    link: 'userlocatebin'
+    link: '../userlocatebin'
   },
   {
-    id: "userrequest/removebin",
+    id: "userrequestremovebin",
     icon: bin,
     title: "Request/Remove bin",
-    link: 'userrequest/removebin'
+    link: '../userrequestremovebin'
   },
   {
     id: "userpickupschedule",
     icon: schedule,
     title: "Pickup Schedule",
-    link: 'userpickupschedule'
+    link: '../userpickupschedule'
   },
   {
     id: "userscanQR",
     icon: qr,
     title: "Scan QR",
-    link: 'userscanQR'
+    link: '../userscanQR'
   },
   {
     id: "usertroubleshootsensors",
     icon: troubleshoot,
     title: "Troubleshoot sensors",
-    link: 'usertroubleshootsensors'
+    link: '../usertroubleshoot'
   },
   {
     id: "usersettings",
     icon: settings,
     title: "Settings",
-    link: 'usersettings'
+    link: '../usersettings'
   },
   
 ];
@@ -94,3 +94,5 @@ export const socialMedia = [
     link: "https://www.linkedin.com/",
   },
 ];
+
+

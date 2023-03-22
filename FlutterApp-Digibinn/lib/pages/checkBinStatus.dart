@@ -7,7 +7,8 @@ class BinStatus extends StatelessWidget {
           
           title: Text('Check Bin Status'),
           centerTitle: true,
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.red,
+          // comment
         ),
       );
 }

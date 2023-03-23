@@ -11,7 +11,7 @@ function Settings() {
       // Perform any necessary action when an option is clicked
     };
     return (
-        <div className="flex bg-gray-800 min-h-screen pt-6 sm:justify-center sm:pt-0">
+        <div className="flex bg-neutral-900 min-h-screen pt-6 sm:justify-center sm:pt-0">
             <Sidebar />
             <div className="container mx-auto mt-12">
                 <div className="flex-col mb-6">
@@ -100,7 +100,7 @@ function Settings() {
                             </ul>
                             <div class="h-200 border-l-2 border-gray-500 ml-20"></div>
                                 {selectedOption === "account" && (
-                                    <ul className="ml-4 py-2 text-white text-[14px] mt-8 ml-8">
+                                    <ul className="ml-4 py-2 text-white text-[12px] font-poppins mt-8 ml-8">
                                     <li>
                                         <a href="#" className="block px-4 py-2 hover:bg-blue-800 rounded-lg">
                                         Name
@@ -114,6 +114,48 @@ function Settings() {
                                     <li>
                                         <a href="#" className="block px-4 py-2 hover:bg-blue-800 rounded-lg">
                                         Profile Picture Change
+                                        </a>
+                                    </li>
+                                    </ul>
+                                )}
+                                {selectedOption === "notification" && (
+                                    <ul className="ml-4 py-2 text-white text-[12px] font-poppins mt-8 ml-8">
+                                    <li>
+                                        <a href="#" className="block px-4 py-2 hover:bg-blue-800 rounded-lg">
+                                        Notification sound
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="block px-4 py-2 hover:bg-blue-800 rounded-lg">
+                                        Notification dot icon
+                                        </a>
+                                    </li>
+                                    </ul>
+                                )}
+                                {selectedOption === "language" && (
+                                    <ul className="ml-4 py-2 text-white text-[12px] font-poppins mt-8 ml-8">
+                                    <li>
+                                        <a href="#" className="block px-4 py-2 hover:bg-blue-800 rounded-lg">
+                                        English
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="block px-4 py-2 hover:bg-blue-800 rounded-lg">
+                                        Sinhala
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="block px-4 py-2 hover:bg-blue-800 rounded-lg">
+                                        Tamil
+                                        </a>
+                                    </li>
+                                    </ul>
+                                )}
+                                {selectedOption === "version" && (
+                                    <ul className="ml-4 py-2 text-white text-[12px] font-poppins mt-8 ml-8">
+                                    <li>
+                                        <a href="#" className="block px-4 py-2 hover:bg-blue-800 rounded-lg">
+                                        Version 1.0
                                         </a>
                                     </li>
                                     </ul>

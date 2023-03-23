@@ -10,6 +10,10 @@ import schedule from "./schedule.png";
 import qr from "./qr.png";
 import troubleshoot from "./troubleshoot.png";
 import settings from "./settings.png";
+import hasitha from "./hasitha.png";
+import thalal from "./thalal.png";
+import nithursiga from "./nithursiga.png";
+import kemila from "./kemila.png";
 
 export {
   facebook,
@@ -22,5 +26,9 @@ export {
   schedule, 
   qr, 
   troubleshoot, 
-  settings
+  settings,
+  hasitha,
+  thalal,
+  nithursiga,
+  kemila
 };

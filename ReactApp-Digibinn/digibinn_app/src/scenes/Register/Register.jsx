@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar'
 import {Link, NavLink, useNavigate} from 'react-router-dom';
 import {  createUserWithEmailAndPassword  } from 'firebase/auth';
 import { auth } from '../../firebase';
-import { getDatabase, push, ref } from 'firebase/database';
+import { getDatabase, set, ref } from 'firebase/database';
 
 
 const Register = (e) => {
@@ -59,7 +59,7 @@ const Register = (e) => {
                         userType: userType
                     }
             // Signed in
-                push(ref(db, 'users/' + userId), registerUser),
+                set(ref(db, 'users/' + userId), registerUser),
                 console.log(user);
                 alert("Registration successful");
                 navigate("/login")

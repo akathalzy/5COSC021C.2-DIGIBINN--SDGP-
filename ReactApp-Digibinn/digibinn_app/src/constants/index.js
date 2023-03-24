@@ -39,10 +39,10 @@ export const sidebarLinks = [
     link: '../userlocatebin'
   },
   {
-    id: "userrequestremovebin",
+    id: "usernotification",
     icon: bin,
-    title: "Request/Remove bin",
-    link: '../userrequestremovebin'
+    title: "User Notification",
+    link: '../usernotification'
   },
   {
     id: "userpickupschedule",

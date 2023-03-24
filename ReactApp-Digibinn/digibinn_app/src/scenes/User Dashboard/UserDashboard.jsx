@@ -35,7 +35,7 @@ function UserDashboard() {
                         <div className="text-[18px] font-medium font-poppins text-white truncate mb-5">
                             Your smart dustbin's summary 
                         </div>
-                        <div className="grid grid-cols-3 gap-4 mb-12 items-stretch ">
+                        <div className="grid grid-cols-3 gap-4 mb-12 items-stretch ml-9 ">
                         {/* <div className="text-white">
                             <h2>ThingSpeak Channel Data</h2>
                             <ul>
@@ -73,9 +73,9 @@ function UserDashboard() {
                             <div className="mt-1 text-3xl font-semibold text-white mt-10 ml-5" 
                                 style={{ width: 150, height: 150 }}>
                                 <CircularProgressbar 
-                                    value={0.75} 
+                                    value={0} 
                                     maxValue={1} 
-                                    text={`${0.75 * 100}%`
+                                    text={`${0 * 100}%`
                                     } 
                                 />
                                 <p className="text-white text-[18px] font-poppins ml-12 mt-3">SD003</p>

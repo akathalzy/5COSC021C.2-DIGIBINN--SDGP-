@@ -18,8 +18,8 @@ function UserTroubleshoot() {
                             <div className="text-[18px] font-medium text-white truncate mb-5">
                                 Ultra sonic sensor
                             </div>
-                            <div className="mt-1 text-3xl font-semibold text-white">
-                                 <Iframe width="450" height="250" style="border: 1px solid #080000;" src="https://thingspeak.com/channels/1998660/widgets/613144"></Iframe>
+                            <div className="mt-1 text-3xl font-semibold text-white ml-14">
+                                 <Iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2071785/charts/1?bgcolor=%23000000&color=%23d62020&dynamic=true&results=60&title=Weight&type=line&xaxis=Time&yaxis=Weight"></Iframe>
                             </div>
                         </div>
                             
@@ -27,8 +27,9 @@ function UserTroubleshoot() {
                             <div className="text-[18px] font-medium text-white truncate mb-5">
                                 Weight sensor
                             </div>
-                            <div className="mt-1 text-3xl font-semibold text-white">
-                                <Iframe width="450" height="250" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1998660/widgets/613149"></Iframe>
+                            <div className="mt-1 text-3xl font-semibold text-white ml-14">
+                                <Iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/2071785/charts/2?bgcolor=%23000000&color=%23d62020&dynamic=true&results=60&title=Filled+level&type=line&xaxis=Time&yaxis=Filled+level"></Iframe>
+
                             </div>
                         </div>
                     </div>

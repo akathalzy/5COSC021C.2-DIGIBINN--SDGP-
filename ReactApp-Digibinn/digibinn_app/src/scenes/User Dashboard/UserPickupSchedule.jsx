@@ -3,7 +3,7 @@ import Sidebar from "../../components/Sidebar";
 
 function UserPickupSchedule() {
     return (
-        <div className="flex bg-gray-800 min-h-screen pt-6 sm:justify-center sm:pt-0">
+        <div className="flex bg-neutral-900 min-h-screen pt-6 sm:justify-center sm:pt-0">
             <Sidebar />
             <div className="container mx-auto mt-12">
                 <div className="flex-col mb-6">

@@ -1,8 +1,23 @@
 import React from "react";
 import { sidebarLinks } from '../constants/index';
 import { Link } from 'react-router-dom';
+import { auth } from '../firebase'
+import { useState, useEffect } from 'react';
 
 function Sidebar() {
+    const [user, setUser] = useState(null);
+
+     useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(user => {
+        if (user) {
+            setUser(user);
+        } else {
+            setUser(null);
+        }
+    });
+    return () => unsubscribe();
+  }, []);
+
     return (
         <div className="flex flex-col p-6 bg-greyish-black drop-shadow-3xl w-60">
                 <div className="space-y-3">
@@ -42,6 +57,11 @@ function Sidebar() {
                             </li>
                         ))}
                         </ul>
+                        
+                        <div className=" text-black absolute bottom-2 font-poppins ml-4 ">
+                                
+                        <button onClick={() => auth.signOut()}>Logout</button>
+                        </div>
                     </div>
                 </div>
         </div>

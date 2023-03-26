@@ -1,4 +1,4 @@
-import { dashboard, locatebin, bin, schedule, qr, troubleshoot, settings, facebook, instagram, linkedin, twitter  } from "../assets";
+import { dashboard, locatebin, bin, schedule, qr, troubleshoot, settings, facebook, instagram, linkedin, twitter, hasitha, thalal, nithursiga, kemila  } from "../assets";
 
 
 export const navLinks = [
@@ -39,10 +39,10 @@ export const sidebarLinks = [
     link: '../userlocatebin'
   },
   {
-    id: "userrequestremovebin",
+    id: "usernotification",
     icon: bin,
-    title: "Request/Remove bin",
-    link: '../userrequestremovebin'
+    title: "User Notification",
+    link: '../usernotification'
   },
   {
     id: "userpickupschedule",
@@ -95,4 +95,30 @@ export const socialMedia = [
   },
 ];
 
+export const teamMembers = [
+  {
+    name: 'Hasitha Wimalasooriya',
+    role: 'Software Engineer',
+    description: 'Hasitha is a software engineer with expertise in web development and data analytics. He has experience working with both startups and established companies, and is passionate about using technology to solve complex problems.',
+    image: hasitha,
+  },
+  {
+    name: 'Thalal Izzath',
+    role: 'Marketing Professional',
+    description: 'Thalal is a marketing professional with a creative flair and a strategic mindset. He has worked with a range of brands across multiple industries, and is skilled in developing innovative marketing campaigns that connect with audiences.',
+    image: thalal,
+  },
+  {
+    name: 'Kemila Dabare',
+    role: 'Graphic Designer',
+    description: 'Kemila is a graphic designer with a passion for visual storytelling. She specializes in creating designs that are not only aesthetically pleasing, but also communicate a powerful message.',
+    image: kemila,
+  },
+  {
+    name: 'Nithursiga Ramesh',
+    role: 'Social Media Strategist',
+    description: 'Nithursiga is a social media strategist with a deep understanding of digital platforms and their potential for social impact. She has experience working with nonprofit organizations and advocacy groups to amplify their message and reach new audiences.',
+    image: nithursiga,
+  },
+];
 

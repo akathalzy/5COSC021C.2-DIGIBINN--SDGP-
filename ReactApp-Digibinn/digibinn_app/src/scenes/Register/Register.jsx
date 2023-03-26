@@ -73,7 +73,7 @@ const Register = (e) => {
 
 
   return (
-        <div className='bg-rose-700'>
+    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden bg-[url('https://images.unsplash.com/photo-1468581264429-2548ef9eb732?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80')] bg-cover ">
           <Navbar />
             <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
             

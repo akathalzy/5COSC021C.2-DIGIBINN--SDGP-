@@ -34,6 +34,10 @@
   text-fill-color: transparent;
 }
 
+.bg-greyish-black{
+  background-color: #14101d;
+}
+
 .bg-blue-gradient {
   background: linear-gradient(
     157.81deg,

@@ -27,10 +27,9 @@ const Login = () => {
       alert("Login successful");
       const user = userCredential.user;
       const userId = user.uid;
-      const userRef = ref(db, 'users/' + userId  )
+      const userRef = ref(db, `users/` + userId)
       onValue(userRef, (snapshot) => {
         const userData = snapshot.val();
-        console.log([snapshot.val()])
         if (userData.userType === "smartDustbinUser") {
           navigate("/UserDashboard");
         } else if (userData.userType === "trashCollector") {
@@ -49,7 +48,6 @@ const Login = () => {
           break;
         default:
           alert('Error login in');
-          console.error(error);
       }
     })
   }

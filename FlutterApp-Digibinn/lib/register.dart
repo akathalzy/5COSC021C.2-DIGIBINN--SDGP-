@@ -49,7 +49,7 @@ var items = [
                       child: Column(
                         children: [
                           TextField(
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -76,7 +76,7 @@ var items = [
                             height: 30,
                           ),
                           TextField(
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Color.fromARGB(255, 4, 4, 4)),
                             decoration: InputDecoration(
                               
                                 enabledBorder: OutlineInputBorder(
@@ -103,7 +103,7 @@ var items = [
                             height: 30,
                           ),
                           TextField(
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                             obscureText: true,
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
@@ -130,7 +130,7 @@ var items = [
                             height: 30,
                           ),
                           TextField(
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                             obscureText: true,
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(

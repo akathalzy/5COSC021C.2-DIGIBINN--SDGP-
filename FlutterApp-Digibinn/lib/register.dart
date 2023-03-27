@@ -9,6 +9,15 @@ class MyRegister extends StatefulWidget {
 }
 
 class _MyRegisterState extends State<MyRegister> {
+
+String dropdownvalue = 'Smart Dustbin User'; 
+
+var items = [    
+    "Smart Dustbin User",
+    "Trash Collector"
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -117,6 +126,61 @@ class _MyRegisterState extends State<MyRegister> {
                                   borderRadius: BorderRadius.circular(10),
                                 )),
                           ),
+                          SizedBox(
+                            height: 30,
+                          ),
+                          TextField(
+                            style: TextStyle(color: Colors.white),
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 0, 0, 0),
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: Color.fromARGB(255, 0, 0, 0),
+                                  ),
+                                ),
+                                hintText: "Confirm-Password",
+                                fillColor: Colors.grey.shade100,
+                                filled: true,
+                                hintStyle: TextStyle(color: Colors.black54),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                )),
+                          ),
+                           SizedBox(
+                            height: 30,
+                          ),
+                          Text('Select the user type'),
+                           DropdownButton(
+                
+                            // Initial Value
+                            value: dropdownvalue,
+                              
+                            // Down Arrow Icon
+                            icon: const Icon(Icons.keyboard_arrow_down),    
+                              
+                            // Array list of items
+                            items: items.map((String items) {
+                              return DropdownMenuItem(
+                                value: items,
+                                child: Text(items),
+                              );
+                            }).toList(),
+                            // After selecting the desired option,it will
+                            // change button value to selected value
+                            onChanged: (String? newValue) { 
+                              setState(() {
+                                dropdownvalue = newValue!;
+                              });
+                            },
+                          ),
+
                           SizedBox(
                             height: 40,
                           ),

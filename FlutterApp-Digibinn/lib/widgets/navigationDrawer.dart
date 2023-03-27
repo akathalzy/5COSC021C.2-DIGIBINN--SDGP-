@@ -157,7 +157,7 @@ class NavigationDrawerWidget extends StatelessWidget {
         break;
       case 3:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => QRScanner(),
+          builder: (context) => QRScannerPage(),
         ));
         break;
     }

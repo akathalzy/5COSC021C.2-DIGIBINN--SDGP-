@@ -1,22 +1,22 @@
 import React from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import { sidebarLinks } from '../constants/index';
-import { Link } from 'react-router-dom';
-import { auth } from '../firebase'
-import { useState, useEffect } from 'react';
+import { getAuth, signOut } from "firebase/auth";
 
 function Sidebar() {
-    const [user, setUser] = useState(null);
 
-     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
-        if (user) {
-            setUser(user);
-        } else {
-            setUser(null);
-        }
-    });
-    return () => unsubscribe();
-  }, []);
+    const navigate = useNavigate();
+
+    const handleSignout =  (e) => {
+        e.preventDefault();
+        const auth = getAuth();
+        signOut(auth).then(() => {
+        alert('Sign-out successful')
+        navigate('/Login')
+        }).catch((error) => {
+        alert('Error')
+        });
+    }
 
     return (
         <div className="flex flex-col p-6 bg-greyish-black drop-shadow-3xl w-60">
@@ -58,9 +58,13 @@ function Sidebar() {
                         ))}
                         </ul>
                         
-                        <div className=" text-black absolute bottom-2 font-poppins ml-4 ">
+                        <div className=" text-white absolute bottom-2 font-poppins ml-4 ">
                                 
-                        <button onClick={() => auth.signOut()}>Logout</button>
+                        <button 
+                            type='button' 
+                            className={'transition ease-in-out py-2 px-8 bg-blue-500 hover:bg-blue-700 font-poppins font-medium text-[12px] text-white outline-none rounded ${styles} mt-8 mb-8'}
+                            onClick={handleSignout}>
+                            Logout</button>
                         </div>
                     </div>
                 </div>

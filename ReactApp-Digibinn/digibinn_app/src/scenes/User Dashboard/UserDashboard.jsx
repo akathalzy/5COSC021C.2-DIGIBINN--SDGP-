@@ -7,22 +7,16 @@ import { Link } from 'react-router-dom';
 
 
 function UserDashboard() {
-        function Iframe(props) {
-            return (
-              <iframe src={props.src} width={props.width} height={props.height} title={props.title} />
-            );
-          }
+    const [sd001, setsd001] = useState([]);
         
-          const [data, setData] = useState([]);
-          useEffect(() => {
-            const fetchData = async () => {
-              const result = await axios(
-                'https://api.thingspeak.com/channels/2071785/fields/2.json?results=10&median=1'
-              );
-              setData(result.data.feeds);
-            };
-            fetchData();
-          }, []);
+    fetch('https://api.thingspeak.com/channels/2071785/fields/2.json?results=10&average=10')
+        .then(response => response.json())
+        .then(data => {
+        setsd001(parseInt(data.feeds[0].field2));
+        console.log(sd001);
+        })
+        .catch(error => console.error(error));
+  
         
                      
     return (
@@ -36,35 +30,20 @@ function UserDashboard() {
                             Your smart dustbin's summary 
                         </div>
                         <div className="grid grid-cols-3 gap-4 mb-12 items-stretch ml-9 ">
-                        {/* <div className="text-white">
-                            <h2>ThingSpeak Channel Data</h2>
-                            <ul>
-                                {data.map((feed) => (
-                                <li key={feed.entry_id}>
-                                    {feed.field1} ({feed.created_at})
-                                </li>
-                                ))}
-                            </ul>
-                        </div> */}
                             <div className="mt-1 text-3xl font-semibold text-white mt-10 ml-5 " 
                                  style={{ width: 150, height: 150 }}>
                                 <CircularProgressbar 
-                                    value={data} 
-                                    maxValue={1} 
-                                    text={`${data*100}%` } 
+                                    value={sd001} 
+                                    maxValue={100} 
+                                    text={`${sd001}%` } 
                                      />
                                 <p className="text-white text-[18px] font-poppins ml-12 mt-3">SD001</p>
                             </div> 
-                            {/* <Iframe width="450" height="250" style="border: 1px solid #080000;" src="https://thingspeak.com/channels/1998660/widgets/613144"></Iframe>
-                            </div>
-                            <div>
-                            <Iframe width="450" height="250" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1998660/widgets/613149"></Iframe>
-                           */} 
                            <div className="mt-1 text-3xl font-semibold text-white mt-10 ml-5" 
                                 style={{ width: 150, height: 150 }}>
                                 <CircularProgressbar 
                                     value={0} 
-                                    maxValue={1} 
+                                    maxValue={100} 
                                     text={`${0 * 100}%`
                                     } 
                                 />
@@ -74,7 +53,7 @@ function UserDashboard() {
                                 style={{ width: 150, height: 150 }}>
                                 <CircularProgressbar 
                                     value={0} 
-                                    maxValue={1} 
+                                    maxValue={100} 
                                     text={`${0 * 100}%`
                                     } 
                                 />

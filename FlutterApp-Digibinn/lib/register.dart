@@ -17,6 +17,9 @@ class _MyRegisterState extends State<MyRegister> {
   bool passwordVisible = false;
   final confirmPasswordController = TextEditingController();
   bool confirmPasswordVisible = false;
+  // final _nameController = TextEditingController();
+
+
   String dropdownvalue = 'Smart Dustbin User';
 
   var items = ["Smart Dustbin User", "Trash Collector"];
@@ -59,6 +62,7 @@ class _MyRegisterState extends State<MyRegister> {
                       child: Column(
                         children: [
                           TextField(
+                            //  controller: _nameController,
                             style:
                                 TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                             decoration: InputDecoration(

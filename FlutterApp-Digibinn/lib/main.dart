@@ -18,6 +18,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Digibinn App',
       home: StartPage(),
+      // routes: {
+      //   '/MyRegister': (context) => MyRegister(),
+      // },
     );
   }
 }

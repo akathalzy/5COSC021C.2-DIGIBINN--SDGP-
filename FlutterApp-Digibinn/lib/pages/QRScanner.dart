@@ -12,7 +12,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
 
   @override
   void dispose() {
-    qrController?.dispose();
+    qrController.dispose();
     super.dispose();
   }
 

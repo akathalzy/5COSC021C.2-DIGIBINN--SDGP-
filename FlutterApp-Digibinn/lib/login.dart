@@ -1,5 +1,7 @@
 import 'package:digibinn_app/pages/homePage.dart';
 import 'package:digibinn_app/register.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class MyLogin extends StatefulWidget {
@@ -10,12 +12,20 @@ class MyLogin extends StatefulWidget {
 }
 
 class _MyLoginState extends State<MyLogin> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  bool passwordVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.amber,
-      ),
+    gradient: LinearGradient(
+      colors: [Colors.red, Colors.blue],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+    ),
+  ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(
@@ -26,9 +36,9 @@ class _MyLoginState extends State<MyLogin> {
               child: const Text(
                 'Welcome to DigiBinn',
                 style: TextStyle(
-                    color: Color.fromARGB(255, 245, 0, 0),
+                    color: Color.fromARGB(246, 255, 255, 255),
                     fontSize: 38,
-                    fontFamily: "Poppins-Bold.ttf",
+                    fontFamily: "TrajanPro.ttf",
                     letterSpacing: 5),
               ),
             ),
@@ -44,6 +54,7 @@ class _MyLoginState extends State<MyLogin> {
                       child: Column(
                         children: [
                           TextField(
+                            controller: emailController,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
                                 fillColor: Colors.grey.shade100,
@@ -57,15 +68,29 @@ class _MyLoginState extends State<MyLogin> {
                             height: 30,
                           ),
                           TextField(
+                            controller: passwordController,
                             style: TextStyle(),
-                            obscureText: true,
+                            obscureText: !passwordVisible,
                             decoration: InputDecoration(
-                                fillColor: Colors.grey.shade100,
-                                filled: true,
-                                hintText: "Password",
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                )),
+                              fillColor: Colors.grey.shade100,
+                              filled: true,
+                              hintText: "Password",
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    passwordVisible = !passwordVisible;
+                                  });
+                                },
+                                icon: Icon(
+                                  passwordVisible
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                ),
+                              ),
+                            ),
                           ),
                           SizedBox(
                             height: 40,
@@ -82,18 +107,67 @@ class _MyLoginState extends State<MyLogin> {
                                 radius: 30,
                                 backgroundColor: Color(0xff4c505b),
                                 child: IconButton(
-                                    color: Colors.white,
-                                    onPressed: () {
+                                  color: Colors.white,
+                                  onPressed: () async {
+                                    try {
+                                      final user = await FirebaseAuth.instance
+                                          .signInWithEmailAndPassword(
+                                        email: emailController.text,
+                                        password: passwordController.text,
+                                      );
+
                                       Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) => MainPage()),
                                       );
-                                    },
-                                    icon: Icon(
-                                      Icons.arrow_forward,
-                                    )),
-                              )
+                                    } on FirebaseAuthException catch (e) {
+                                      if (e.code == 'wrong-password') {
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              title: Text('Wrong password'),
+                                              content: Text(
+                                                  'The password you entered is incorrect.'),
+                                              actions: [
+                                                TextButton(
+                                                  child: Text('OK'),
+                                                  onPressed: () {
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      } else if (e.code == 'invalid-email') {
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              title: Text('Invalid email'),
+                                              content: Text(
+                                                  'The email you entered is invalid.'),
+                                              actions: [
+                                                TextButton(
+                                                  child: Text('OK'),
+                                                  onPressed: () {
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      } else {
+                                        print("Error ${e.toString()}");
+                                      }
+                                    }
+                                  },
+                                  icon: Icon(Icons.arrow_forward),
+                                ),
+                              ),
                             ],
                           ),
                           SizedBox(
@@ -115,7 +189,7 @@ class _MyLoginState extends State<MyLogin> {
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,
-                                      color: Color(0xff4c505b),
+                                      color: Color.fromARGB(255, 3, 3, 3),
                                       fontSize: 18),
                                 ),
                                 style: ButtonStyle(),

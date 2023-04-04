@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "764805872612",
+    "firebase_url": "https://digibinn-20537-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "digibinn-20537",
+    "storage_bucket": "digibinn-20537.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764805872612:android:1fb0d8fbb00f9dd46b25f1",
+        "android_client_info": {
+          "package_name": "com.example.digibinn_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764805872612-nsek54dkng5364bq3pq8elqng3ip2n8v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAh2eiwG-dH-ln4uYC5GhUJFo0zQp3CWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764805872612-nsek54dkng5364bq3pq8elqng3ip2n8v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

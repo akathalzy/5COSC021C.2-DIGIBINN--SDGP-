@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
         title: title,
         theme: ThemeData(primarySwatch: Colors.blue),
         home: MainPage(),
-        
       );
 }
 
@@ -32,26 +31,59 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  double progress = 0.5;
+  final List<double> progressList = [0.5, 0, 0];
+
   @override
   Widget build(BuildContext context) => Scaffold(
         drawer: NavigationDrawerWidget(),
-        // endDrawer: NavigationDrawerWidget(),
         appBar: AppBar(
           title: Text(MyApp.title),
           centerTitle: true,
         ),
-        body: Builder(
-          builder: (context) => Container(
-            alignment: Alignment.center,
-            padding: EdgeInsets.symmetric(horizontal: 32),
-            // child: ButtonWidget(
-            //   icon: Icons.open_in_new,
-            //   text: 'Open Drawer',
-            //   onClicked: () {
-            //     Scaffold.of(context).openDrawer();
-            //     // Scaffold.of(context).openEndDrawer();
-            //   },
-            // ),
+        body: Container(
+          height: MediaQuery.of(context).size.height / 2,
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+              'Filled Percentage',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 10),
+              Container(
+                  height: 200,
+                  width: 500,
+                  child: PageView.builder(
+                    itemCount: progressList.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        margin: EdgeInsets.symmetric(horizontal: 8),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(color: Colors.grey),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircularProgressIndicator(
+                              value: progress,
+                              backgroundColor: Colors.grey[300],
+                              strokeWidth: 15,
+                            ),
+                            SizedBox(height: 16),
+                            Text('${(progress * 100).round()}%'),
+                          ],
+                        ),
+                      );
+                    },
+                  )),
+            ],
           ),
         ),
       );

@@ -1,5 +1,5 @@
 import React from "react";
-import CollectorSidebar from "../../components/CollectorSidebar";
+import Sidebar from "../../components/Sidebar";
 
 function CollectorDashboard() {
     return (

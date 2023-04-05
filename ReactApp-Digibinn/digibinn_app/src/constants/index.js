@@ -72,24 +72,6 @@ export const sidebarLinks = [
   
 ];
   
-export const collectorsidebarLinks = [
-  {
-    id: "userdashboard",
-    icon: dashboard,
-    title: "Dashboard",
-    link: '../userdashboard'
-  },
-
-  {
-    id: "userdashboard",
-    icon: dashboard,
-    title: "Dashboard",
-    link: '../userdashboard'
-  },
-  
- 
-  
-];
 
 export const socialMedia = [
   {

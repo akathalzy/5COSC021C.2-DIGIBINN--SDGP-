@@ -1,5 +1,4 @@
 import React, { useState, useEffect }  from "react";
-import axios from 'axios';
 import Sidebar from "../../components/Sidebar";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -25,12 +24,12 @@ function UserDashboard() {
             <div className="container mx-auto mt-12">
                 <div className="flex-col mb-6">
                     <h1 className="text-white mb-8 text-3xl font-poppins font-semibold">Smart Dustbin Dashboard</h1>
-                    <div className="w-full px-4 py-5 bg-black rounded-lg shadow mb-10 items-center ">
-                        <div className="text-[18px] font-medium font-poppins text-white truncate mb-5">
+                    <div className="w-full px-4 py-5 bg-black rounded-lg shadow mb-10 content-center ">
+                        <div className="flex-1 text-[18px] font-medium font-poppins text-white mb-5">
                             Your smart dustbin's summary 
                         </div>
-                        <div className="grid grid-cols-3 gap-4 mb-12 items-stretch ml-9 ">
-                            <div className="mt-1 text-3xl font-semibold text-white mt-10 ml-5 " 
+                        <div className="grid grid-cols-3 gap-14 mb-12 items-center ml-32 ">
+                            <div className="text-3xl font-semibold text-white mt-10 ml-5 " 
                                  style={{ width: 150, height: 150 }}>
                                 <CircularProgressbar 
                                     value={sd001} 
@@ -39,7 +38,7 @@ function UserDashboard() {
                                      />
                                 <p className="text-white text-[18px] font-poppins ml-12 mt-3">SD001</p>
                             </div> 
-                           <div className="mt-1 text-3xl font-semibold text-white mt-10 ml-5" 
+                           <div className=" text-3xl font-semibold text-white mt-10 ml-5" 
                                 style={{ width: 150, height: 150 }}>
                                 <CircularProgressbar 
                                     value={0} 
@@ -49,7 +48,7 @@ function UserDashboard() {
                                 />
                                 <p className="text-white text-[18px] font-poppins ml-12 mt-3">SD002</p>
                             </div>
-                            <div className="mt-1 text-3xl font-semibold text-white mt-10 ml-5" 
+                            <div className="text-3xl font-semibold text-white mt-10 ml-5" 
                                 style={{ width: 150, height: 150 }}>
                                 <CircularProgressbar 
                                     value={0} 

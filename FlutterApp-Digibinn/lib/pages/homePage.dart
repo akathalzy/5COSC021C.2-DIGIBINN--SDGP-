@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:flutter_map/flutter_map.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../widgets/navigationDrawer.dart';
+import 'package:location/location.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,6 +35,8 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   double progress = 0.5;
   final List<double> progressList = [0.5, 0, 0];
+  Location _location = Location();
+  bool _trackingLocation = false;
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -82,9 +86,45 @@ class _MainPageState extends State<MainPage> {
                         ),
                       );
                     },
-                  )),
-            ],
-          ),
-        ),
-      );
+                  ),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    'Bin Location',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  // Container(
+                  //   height: 200,
+                  //   width: 500,
+                  //   decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(16),
+                  //     border: Border.all(color: Colors.grey),
+                  //   ),
+                  //   child: Container(
+                  //     decoration: BoxDecoration(
+                  //       borderRadius: BorderRadius.circular(16),
+                  //     ),
+                  //     child: FlutterMap(
+                  //       options: MapOptions(
+                  //         center: LatLng(37.7749, -122.4194),
+                  //         zoom: 13.0,
+                  //       ),
+                  //       layers: [
+                  //         TileLayerOptions(
+                  //           urlTemplate:
+                  //               'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  //           subdomains: ['a', 'b', 'c'],
+                  //         ),
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
+                  ],
+                ),
+              ),
+            );
 }

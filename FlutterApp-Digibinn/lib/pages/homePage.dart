@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../widgets/navigationDrawer.dart';
@@ -53,7 +54,7 @@ class _MainPageState extends State<MainPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-              'Filled Percentage',
+                'Filled Percentage',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -61,70 +62,68 @@ class _MainPageState extends State<MainPage> {
               ),
               SizedBox(height: 10),
               Container(
-                  height: 200,
-                  width: 500,
-                  child: PageView.builder(
-                    itemCount: progressList.length,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        margin: EdgeInsets.symmetric(horizontal: 8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: Colors.grey),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CircularProgressIndicator(
-                              value: progress,
-                              backgroundColor: Colors.grey[300],
-                              strokeWidth: 15,
-                            ),
-                            SizedBox(height: 16),
-                            Text('${(progress * 100).round()}%'),
-                          ],
-                        ),
-                      );
-                    },
-                  ),
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    'Bin Location',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  // Container(
-                  //   height: 200,
-                  //   width: 500,
-                  //   decoration: BoxDecoration(
-                  //     borderRadius: BorderRadius.circular(16),
-                  //     border: Border.all(color: Colors.grey),
-                  //   ),
-                  //   child: Container(
-                  //     decoration: BoxDecoration(
-                  //       borderRadius: BorderRadius.circular(16),
-                  //     ),
-                  //     child: FlutterMap(
-                  //       options: MapOptions(
-                  //         center: LatLng(37.7749, -122.4194),
-                  //         zoom: 13.0,
-                  //       ),
-                  //       layers: [
-                  //         TileLayerOptions(
-                  //           urlTemplate:
-                  //               'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                  //           subdomains: ['a', 'b', 'c'],
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
-                  ],
+                height: 200,
+                width: 500,
+                child: PageView.builder(
+                  itemCount: progressList.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: EdgeInsets.symmetric(horizontal: 8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: Colors.grey),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CircularProgressIndicator(
+                            value: progress,
+                            backgroundColor: Colors.grey[300],
+                            strokeWidth: 15,
+                          ),
+                          SizedBox(height: 16),
+                          Text('${(progress * 100).round()}%'),
+                        ],
+                      ),
+                    );
+                  },
                 ),
               ),
-            );
+              SizedBox(height: 20),
+              Text(
+                'Bin Location',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 10),
+              Expanded(
+                child: Container(
+                  height: 400,
+                  margin: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: InAppWebView(
+                      initialUrlRequest: URLRequest(
+                        url: Uri.parse('https://goo.gl/maps/SXmJWBm1T5mB22qx8'),
+                      ),
+                      initialOptions: InAppWebViewGroupOptions(
+                        crossPlatform: InAppWebViewOptions(
+                          javaScriptEnabled: true,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+
 }

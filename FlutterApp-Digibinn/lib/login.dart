@@ -38,7 +38,6 @@ class _MyLoginState extends State<MyLogin> {
                 style: TextStyle(
                     color: Color.fromARGB(246, 255, 255, 255),
                     fontSize: 38,
-                    fontFamily: "TrajanPro.ttf",
                     letterSpacing: 5),
               ),
             ),

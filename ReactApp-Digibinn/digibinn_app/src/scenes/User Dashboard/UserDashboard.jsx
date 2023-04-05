@@ -95,15 +95,15 @@ function UserDashboard() {
                             <div className="grid grid-rows-2 gap-2 content-center mt-1 text-2xl font-inter text-white ">
                                 <div className="ml-6">
                                     <p className="text-white font-inter text-[14px]">Ultra sonic sensor</p> 
-                                    <p className="text-stone-500 font-inter text-[12px] ml-4">Get data</p> 
+                                    <p className="text-stone-500 font-inter text-[12px] ml-4">No issues found</p> 
                                 </div>
                                 <div className="ml-6">
                                     <p className="text-white font-inter text-[14px]">Weight sensor</p> 
-                                    <p className="text-stone-500 font-inter text-[12px] ml-4">Get data</p>  
+                                    <p className="text-stone-500 font-inter text-[12px] ml-4">No issues found</p>  
                                 </div>
                                 <div className="ml-6">
                                     <p className="text-white font-inter text-[14px]">GPS sensor</p> 
-                                    <p className="text-stone-500 font-inter text-[12px] ml-4">Get data</p>  
+                                    <p className="text-stone-500 font-inter text-[12px] ml-4">No issues found</p>  
                                 </div>
                             </div>
                         </div>

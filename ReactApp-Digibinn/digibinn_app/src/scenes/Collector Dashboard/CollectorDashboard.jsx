@@ -16,15 +16,28 @@ function CollectorDashboard() {
                         <div className="text-[15px] font-regular font-inter text-white truncate mb-5">
                             Collectors Portal Summary
                         </div>
+                        <div className="grid grid-cols-3 gap-0 content-center mt-1 text-8xl font-inter text-white ">
+                                    <div className="ml-6">
+                                    -
+                                    <p className="text-stone-500 font-inter text-[12px]">Total Pickups Completed</p> 
+                                    </div>
+                                    <div className="ml-16">
+                                    -
+                                    <p className="text-stone-500 font-inter text-[12px]">Dustbins currently active</p> 
+                                    </div>
+                                </div>
+                                    
                         <div className="mt-1 text-3xl font-semibold text-white">
-                             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />  
+                              
                         </div>
                     </div>
-                  
                        <br></br>
                     </div>
                 </div>
+                
             </div>
+            
       
     );
 }

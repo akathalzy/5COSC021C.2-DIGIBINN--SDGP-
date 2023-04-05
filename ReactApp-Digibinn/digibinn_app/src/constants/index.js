@@ -1,4 +1,4 @@
-import { dashboard, locatebin, bin, schedule, qr, troubleshoot, settings, facebook, instagram, linkedin, twitter, hasitha, thalal, nithursiga, kemila  } from "../assets";
+import { dashboard, locatebin, bin, schedule, qr, troubleshoot, settings, facebook, instagram, linkedin, twitter, hasitha, thalal, nithursiga, kemila, maheel  } from "../assets";
 
 
 export const navLinks = [
@@ -120,6 +120,12 @@ export const teamMembers = [
     role: 'Social Media Strategist',
     description: 'Nithursiga is a social media strategist with a deep understanding of digital platforms and their potential for social impact. She has experience working with nonprofit organizations and advocacy groups to amplify their message and reach new audiences.',
     image: nithursiga,
+  },
+  {
+    name: 'Maheel Thilakarathne',
+    role: 'Mobile App Developer',
+    description: 'Maheel Thilakarathne is a skilled mobile app developer with experience in developing user-friendly and efficient iOS and Android applications. He has expertise in coding languages such as Java, Swift, and Kotlin.',
+    image: maheel,
   },
 ];
 

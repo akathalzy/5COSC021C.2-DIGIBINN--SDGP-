@@ -22,7 +22,7 @@ function UserLocateBin({ google }) {
   class MapContainer extends Component {
     render() {
       return (
-        <Map google={google} zoom={8} initialCenter={{ lat: latitude, lng: longitude }} style={{ width: '1165px', height: '650px' }}>
+        <Map google={google} zoom={8} initialCenter={{ lat: latitude, lng: longitude }} style={{ width: '1165px', height: '500px' }}>
           <Marker position={{ lat: latitude, lng: longitude }} />
         </Map>
       );

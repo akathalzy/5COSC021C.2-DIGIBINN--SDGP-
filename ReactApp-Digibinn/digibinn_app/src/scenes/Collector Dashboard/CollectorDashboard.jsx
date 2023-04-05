@@ -20,27 +20,12 @@ function CollectorDashboard() {
                              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                        <div className="w-full px-4 py-5 bg-black rounded-lg shadow mb-10">
-                            <div className="text-sm font-medium text-gray-500 truncate mb-5">
-                                Locations
-                            </div>
-                            <div className="mt-1 text-3xl font-semibold text-white">
-                                 <br /><br /><br /><br /><br /><br /><br />
-                            </div>
-                        </div>
-                        <div className="w-full px-4 py-5 bg-black rounded-lg shadow mb-10">
-                            <div className="text-sm font-medium text-gray-500 truncate mb-5">
-                                Sensors
-                            </div>
-                            <div className="mt-1 text-3xl font-semibold text-white">
-                                 <br /><br /><br /><br /><br /><br /><br />
-                            </div>
-                        </div>
+                  
+                       <br></br>
                     </div>
                 </div>
             </div>
-        </div>
+      
     );
 }
 export default CollectorDashboard

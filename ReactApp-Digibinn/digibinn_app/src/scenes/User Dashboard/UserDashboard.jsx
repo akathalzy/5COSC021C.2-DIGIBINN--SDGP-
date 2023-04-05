@@ -25,7 +25,7 @@ function UserDashboard() {
             <div className="container mx-auto mt-12">
                 <div className="flex-col mb-6">
                 <div className="text-[30px] font-inter font-medium text-white">
-                            Welcome to Digibinn!
+                            Welcome to your User Dashboard!
                         </div>
                     <h1 className="text-subheading mb-8 text-[15px] font-inter font-regular">Good to see you again!</h1>
                     <div className="w-full px-4 py-5 bg-sidebarcolor rounded-lg shadow mb-10 items-center ">

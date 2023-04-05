@@ -32,6 +32,7 @@ export const sidebarLinks = [
     title: "Dashboard",
     link: '../userdashboard'
   },
+  
   {
     id: "userlocatebin",
     icon: locatebin,
@@ -71,6 +72,24 @@ export const sidebarLinks = [
   
 ];
   
+export const collectorsidebarLinks = [
+  {
+    id: "userdashboard",
+    icon: dashboard,
+    title: "Dashboard",
+    link: '../userdashboard'
+  },
+
+  {
+    id: "userdashboard",
+    icon: dashboard,
+    title: "Dashboard",
+    link: '../userdashboard'
+  },
+  
+ 
+  
+];
 
 export const socialMedia = [
   {

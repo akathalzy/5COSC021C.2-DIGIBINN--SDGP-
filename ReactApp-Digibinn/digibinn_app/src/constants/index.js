@@ -60,7 +60,7 @@ export const sidebarLinks = [
   {
     id: "usertroubleshootsensors",
     icon: troubleshoot,
-    title: "Troubleshoot sensors",
+    title: "Sensor Dashboard",
     link: '../usertroubleshoot'
   },
   {

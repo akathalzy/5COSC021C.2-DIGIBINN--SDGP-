@@ -32,7 +32,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
             TextButton(
               child: Text('OK'),
               onPressed: () {
-                Navigator.of(context).pop();
+                Navigator.of(context).pop(); 
               },
             ),
           ],

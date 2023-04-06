@@ -17,14 +17,30 @@ class _QRScannerPageState extends State<QRScannerPage> {
   }
 
   void _onQRViewCreated(QRViewController controller) {
-    setState(() {
-      qrController = controller;
-    });
-    controller.scannedDataStream.listen((scanData) {
-      // Do something with the scan data
-      print(scanData);
-    });
-  }
+  setState(() {
+    qrController = controller;
+  });
+  controller.scannedDataStream.listen((barcode) async {
+    // Show a dialog to inform the user that the QR code has been scanned
+    await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('QR Code Scanned'),
+          content: Text('The QR code has been scanned.'),
+          actions: [
+            TextButton(
+              child: Text('OK'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  });
+}
 
   @override
   Widget build(BuildContext context) {

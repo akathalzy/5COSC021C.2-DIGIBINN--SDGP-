@@ -3,6 +3,7 @@ import 'package:digibinn_app/pages/LocateBin.dart';
 import 'package:digibinn_app/pages/QRScanner.dart';
 import 'package:digibinn_app/pages/checkBinStatus.dart';
 import 'package:digibinn_app/pages/userPage.dart';
+import 'package:digibinn_app/pages/settings.dart';
 import 'package:flutter/material.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {

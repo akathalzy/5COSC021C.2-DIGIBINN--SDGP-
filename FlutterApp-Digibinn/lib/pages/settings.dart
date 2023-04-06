@@ -1,17 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-class SettingPageUI extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Settings Page',
-      theme: ThemeData(primarySwatch: Colors.blue,
-      ), 
-      home: SettingPageUI(),
-    );
-  }
-}
+
 
 class SettingPageUI extends StatefulWidget{
   @override

@@ -10,6 +10,7 @@ class MyLogin extends StatefulWidget {
   // @overridesbfasbjf
   _MyLoginState createState() => _MyLoginState();
 }
+//updateed
 
 class _MyLoginState extends State<MyLogin> {
   final emailController = TextEditingController();
@@ -20,12 +21,12 @@ class _MyLoginState extends State<MyLogin> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-    gradient: LinearGradient(
-      colors: [Colors.red, Colors.blue],
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-    ),
-  ),
+        gradient: LinearGradient(
+          colors: [Colors.red, Colors.blue],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(

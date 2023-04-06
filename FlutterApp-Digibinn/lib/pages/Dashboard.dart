@@ -7,7 +7,7 @@ class DashBoard extends StatelessWidget {
         //drawer: NavigationDrawerWidget(),
         backgroundColor: Color.fromARGB(136, 196, 182, 182),
         appBar: AppBar(
-          title: Text('DashBoard'),
+          title: Text('Sensor DashBoard'),
           centerTitle: true,
           backgroundColor: Colors.green,
         ),
@@ -16,7 +16,7 @@ class DashBoard extends StatelessWidget {
             children: [
               Padding(padding: EdgeInsets.only(top: 20)),
               Text(
-                'Weight',
+                'Weight Sensor',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
@@ -43,7 +43,7 @@ class DashBoard extends StatelessWidget {
               ),
               Padding(padding: EdgeInsets.only(top: 20)),
               Text(
-                'Distance',
+                'Ultra Sonic Sensor',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,

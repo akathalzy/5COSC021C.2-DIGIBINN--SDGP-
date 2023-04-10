@@ -10,7 +10,7 @@ class MyLogin extends StatefulWidget {
   // @overridesbfasbjf
   _MyLoginState createState() => _MyLoginState();
 }
-//updateed
+//updated
 
 class _MyLoginState extends State<MyLogin> {
   final emailController = TextEditingController();
